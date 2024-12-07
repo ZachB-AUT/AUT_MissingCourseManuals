@@ -11,11 +11,11 @@ The most recent version of xv6 can be found on this github page:\
  * What do I know about xv6?
  *
  * - [x] Split into kernel and user folders
- *  |- [ ] Contents of kernel
- *  |- [ ] Contents of user
+ *  |- [x] Contents of kernel
+ *  |- [x] Contents of user
  * - [x] Makefile
- * - [ ] Process for adding a new user program
- * - [ ] Process for adding a new system call
+ * - [x] Process for adding a new user program
+ * - [x] Process for adding a new system call
  *
  */
 
@@ -153,8 +153,30 @@ Add the name of your user program in the same format as the other programs here
 It is best to do so at the bottom, to make it easier to find quickly.
 #pagebreak()
 
+== Files of interest
+
+These are the most commonly modified files in xv6:
+
++ In kernel space:
+  - `kernel/proc.c`            - Process related functions
+  - `kernel/syscall.c`         - System call definitions and setup
+  - `kernel/sysproc.c`         - System call implementations
+  - `kernel/defs.h`            - Function prototypes
+  - `kernel/syscall.h`         - System call numbers
+  - `kernel/param.h`           - System parameters
+  - `kernel/proc.h`            - Process structure definitions
+
++ In user space:
+  - `user/user.h`              - User-space system call declarations
+  - `user/usys.pl`             - System call stub generator
+  - `user/*.c`                 - Your user programs
+
+The files you will most commonly be editing are:
+- `sysproc.c` for implementing system calls
+- `proc.c` for process management
 
 == Using xv6
+
 === XV6 Setup
 
 Assuming you have run though the earlier software setup section, you should be

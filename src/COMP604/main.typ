@@ -29,6 +29,7 @@ Last updated: #datetime.today().display()
 // Introduction to the document
 
 = Introduction
+#line()
 
 This document is a collection of my notes and knowledge related to the class "Operating
 Systems" at AUT, written for someone taking this class. While largely intended as
@@ -42,7 +43,10 @@ This is an excellent resource, and I highly recommend using this.
 #pagebreak()
 
 // This is where I include the weeks contents.
-#include("chapters/chapter_1.typ")
-#include("chapters/chapter_2.typ")
-#include("chapters/chapter_3.typ")
-#include("chapters/chapter_4.typ")
+#include("chapters/chapter_1.typ") // Class and assignment overviews
+#include("chapters/chapter_2.typ") // C programming in xv6
+#include("chapters/chapter_3.typ") // Command line overview
+#include("chapters/chapter_4.typ") // xv6 overview
+
+// Future directions:
+// Add actual course content
