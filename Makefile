@@ -13,3 +13,6 @@ build:
 	echo "Compiling typst documents"
 	typst compile ./src/COMP604/main.typ ./dist/manuals/COMP604/COMP604_Missing_Manual.pdf
 	typst compile ./src/COMP500/main.typ ./dist/manuals/COMP500/COMP500_Missing_Manual.pdf
+
+test:
+	python3 -m http.server --directory dist/ 8000
