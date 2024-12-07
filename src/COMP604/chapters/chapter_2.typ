@@ -45,7 +45,7 @@ int, etc.
 == Pointers
 
 Pointers are variables that store memory addresses of other variables. These are
-used extensively in operating systems, so I highly reccomend studying them
+used extensively in operating systems, so I highly recommend studying them.
 
 A pointer is declared by adding an asterisk (\*) before the variable name:
 ```c

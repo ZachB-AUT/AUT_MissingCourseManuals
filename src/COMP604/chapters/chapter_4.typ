@@ -3,28 +3,28 @@
 = XV6 for Dummies
 #line()
 
-The most recent version of xv6 can be found on this github page:\
+The most recent version of xv6 can be found on this GitHub page:\
 #link("https://github.com/mit-pdos/xv6-riscv", [xv6-riscv])
 
 
 /*
- * What do I know about xv6?
- *
- * - [x] Split into kernel and user folders
- *  |- [x] Contents of kernel
- *  |- [x] Contents of user
- * - [x] Makefile
- * - [x] Process for adding a new user program
- * - [x] Process for adding a new system call
- *
- */
+	* What do I know about xv6?
+	*
+	* - [x] Split into kernel and user folders
+	*  |- [x] Contents of kernel
+	*  |- [x] Contents of user
+	* - [x] Makefile
+	* - [x] Process for adding a new user program
+	* - [x] Process for adding a new system call
+	*
+	*/
 
 == General structure
 
-Like most unix operating systems, xv6 is split into user and kernel space.
+Like most Unix operating systems, xv6 is split into user and kernel space.
 
-Almost all of the operation of xv6 occurs in kernelspace, which has elevated
-privileges to userspace.
+Almost all of the operation of xv6 occurs in kernel space, which has elevated
+privileges to user space.
 
 The distinction is made clear by the fact that kernel programs are kept in the
 'kernel' folder, and user programs are kept in the 'user' folder. Additionally,
@@ -33,11 +33,11 @@ the startup sequence for xv6. The structure looks something like this:
 
 ```
 xv6-riscv/
-  ├─ Makefile
-  ├─ user/
-  │  ├─ User programs go here
-  ├─ kernel/
-     ├─ Kernel programs go here
+		├─ Makefile
+		├─ user/
+		│  ├─ User programs go here
+		├─ kernel/
+					├─ Kernel programs go here
 ```
 
 == System Calls
@@ -61,52 +61,52 @@ Adding a new system call is a complex process.
 The following steps need to be performed to add a new system call:
 
 +  In `kernel/syscall.h`, add the system call number.
-   This file contains all of the numbers used by the system calls.
-   #linebreak()
-   ```c
-   #define SYS_examplesyscall 22
-   ```
+			This file contains all of the numbers used by the system calls.
+			#linebreak()
+			```c
+			#define SYS_examplesyscall 22
+			```
 
 +  In `kernel/syscall.c`, include the prototype for the system call.
-   Near the top of `syscall.h`, add:
-   #linebreak()
-   ```c
-   extern uint64 sys_examplesyscall(void);
-   ```
+			Near the top of `syscall.h`, add:
+			#linebreak()
+			```c
+			extern uint64 sys_examplesyscall(void);
+			```
 
-   Then, near the bottom add an entry to the array of function pointers:
-   ```c
-   [SYS_examplesyscall] sys_examplesyscall,
-   ```
+			Then, near the bottom add an entry to the array of function pointers:
+			```c
+			[SYS_examplesyscall] sys_examplesyscall,
+			```
 
 
 +  In `kernel/sysproc.c`, implement the system call.
-   ```c
-   uint64
-   sys_examplesyscall(void)
-   {
-     // Implementation goes here
-     return 0;
-   }
-   ```
+			```c
+			uint64
+			sys_examplesyscall(void)
+			{
+					// Implementation goes here
+					return 0;
+			}
+			```
 
 +  In `kernel/defs.h`, add a prototype for the system call.
-   ```c
-   uint64 sys_examplesyscall(void);
-   ```
+			```c
+			uint64 sys_examplesyscall(void);
+			```
 
 + In `user/usys.pl`, add an entry for your syscall at the bottom:
-  ```perl
-  entry("examplesyscall");
-  ```
-  \ \ \
+		```perl
+		entry("examplesyscall");
+		```
+		\ \ \
 
 + Finally, in `user/user.h`, add a prototype of the new system call:
-  ```c
-  int fork(void);
-  // All other system calls
-  int examplesyscall(void);
-  ```
+		```c
+		int fork(void);
+		// All other system calls
+		int examplesyscall(void);
+		```
 
 #linebreak()
 
@@ -125,7 +125,7 @@ To add a new user program to xv6, you must first add the C program under the
 `user/` directory. This program is essentially the same as any other C program,
 except it must use `exit(0)` instead of `return 0;`
 
-After doing so, you must modify the makefile.
+After doing so, you must modify the Makefile.
 Starting on line 125 is a section that looks like this:
 
 ```make
@@ -158,18 +158,18 @@ It is best to do so at the bottom, to make it easier to find quickly.
 These are the most commonly modified files in xv6:
 
 + In kernel space:
-  - `kernel/proc.c`            - Process related functions
-  - `kernel/syscall.c`         - System call definitions and setup
-  - `kernel/sysproc.c`         - System call implementations
-  - `kernel/defs.h`            - Function prototypes
-  - `kernel/syscall.h`         - System call numbers
-  - `kernel/param.h`           - System parameters
-  - `kernel/proc.h`            - Process structure definitions
+		- `kernel/proc.c`            - Process related functions
+		- `kernel/syscall.c`         - System call definitions and setup
+		- `kernel/sysproc.c`         - System call implementations
+		- `kernel/defs.h`            - Function prototypes
+		- `kernel/syscall.h`         - System call numbers
+		- `kernel/param.h`           - System parameters
+		- `kernel/proc.h`            - Process structure definitions
 
 + In user space:
-  - `user/user.h`              - User-space system call declarations
-  - `user/usys.pl`             - System call stub generator
-  - `user/*.c`                 - Your user programs
+		- `user/user.h`              - User-space system call declarations
+		- `user/usys.pl`             - System call stub generator
+		- `user/*.c`                 - Your user programs
 
 The files you will most commonly be editing are:
 - `sysproc.c` for implementing system calls
@@ -179,7 +179,7 @@ The files you will most commonly be editing are:
 
 === XV6 Setup
 
-Assuming you have run though the earlier software setup section, you should be
+Assuming you have run through the earlier software setup section, you should be
 able to run the command: `make qemu` from within the xv6-riscv directory and be
 able to start it without issue. However, on MacOS you may need to modify the
 Makefile to run it successfully. To do so, find line 59 and remove `-Werror`
@@ -206,8 +206,8 @@ use, instead of having to repeat this step.
 
 Additionally, while the xv6 download is approximately 18 megabytes, almost all
 of that is the .git folder (responsible for version tracking using git),
-removing this makes the whole folder some number of kilobytes This means that
-the whole directory can be sent through most messaging apps
+removing this makes the whole folder some number of kilobytes. This means that
+the whole directory can be sent through most messaging apps.
 
 To remove this directory, run:
 ```sh
@@ -221,20 +221,20 @@ from inside the `xv6-riscv` directory.
 Generally there are two steps for submitting an xv6 file.
 
 + Clean the xv6 directory\
-  Run:
-  ```sh
-  make clean
-  ```
-  from inside the 'xv6-riscv/' directory.\
-  This removes all compiled binaries.
+		Run:
+		```sh
+		make clean
+		```
+		from inside the 'xv6-riscv/' directory.\
+		This removes all compiled binaries.
 
 + Use tar to turn the directory into an archive file.\
-  This can be done by running something like:
-  ```sh
-  tar czf Q1-12345678.tar.gz ./xv6-riscv
-  ```
-  from *above* the `xv6-riscv` directory.
-  Substitute with the specific question and your student ID sequence.
+		This can be done by running something like:
+		```sh
+		tar czf Q1-12345678.tar.gz ./xv6-riscv
+		```
+		from *above* the `xv6-riscv` directory.
+		Substitute with the specific question and your student ID sequence.
 
 All of these steps can be automated by writing your own makefile for the
 assignment. Learn how to do this, it will save you hours of recompiling,

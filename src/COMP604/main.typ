@@ -49,4 +49,4 @@ This is an excellent resource, and I highly recommend using this.
 #include("chapters/chapter_4.typ") // xv6 overview
 
 // Future directions:
-// Add actual course content
+// Add Actual Course Content

@@ -19,7 +19,7 @@ cd newDirectory/
 === ls
 
 Short for 'list', lists the files in a directory.
-use the command line flag `-a` (short for 'all'), to show hidden files and directories.
+Use the command line flag `-a` (short for 'all'), to show hidden files and directories.
 
 ```sh
 ls
@@ -67,7 +67,7 @@ tar -czvf myname-12345678-assX.tar.gz xv6-riscv/
 
 == grep
 
-Grep allows you to search for strings of text (Or more generally, regexes) in either a file or a stream
+Grep allows you to search for strings of text (or more generally, regexes) in either a file or a stream.
 
 Example usage:
 ```sh
@@ -83,18 +83,18 @@ grep -r "string_to_search" .
 
 == nano/vim
 
-Both of these are command line text editors. Nano is much easier to use, but is
-more limited. For most of you Nano is the best option. you can use it by running
-something like: `nano fileToEdit.txt` To exit, use `ctrl-x`
+Both of these are command line text editors. Nano is much easier to use but is
+more limited. For most of you Nano is the best option. You can use it by running
+something like: `nano fileToEdit.txt`. To exit, use `ctrl-x`.
 
 Vim is far more complex, but is *absolutely* worth learning how to use. If you
 learn how to use it well, Vim is faster, easier to use, and more powerful. To
-open vim, use `vim fileToEdit.txt`\ To exit, enter the key combination: `:qa!`,
+open vim, use `vim fileToEdit.txt`. To exit, enter the key combination: `:qa!`,
 which stands for "quit all, force".
 
 Either of these is worth knowing how to use, as they are preinstalled on
-essentially all linux installs. You can use either of these text editors to edit
-files inside the ubuntu virtual machine without the use of an external text editor.
+essentially all Linux installs. You can use either of these text editors to edit
+files inside the Ubuntu virtual machine without the use of an external text editor.
 
 == Useful utilities you might want to install
 
