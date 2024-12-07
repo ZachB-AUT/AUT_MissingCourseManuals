@@ -15,4 +15,5 @@ push: build
 	git push
 
 test: build
+	echo "Running test server"
 	python3 -m http.server --directory dist/ 8000
