@@ -27,12 +27,15 @@ header {
 
 .manual-list li {
     margin-bottom: 1.5rem;
+    border:
+        5px,
+        solid #eee;
 }
 
 .manual-list a {
     display: block;
     padding: 1rem;
-    border: 1px solid #eee;
+    border: 3px solid #eee;
     text-decoration: none;
     color: inherit;
     border-radius: 4px;
