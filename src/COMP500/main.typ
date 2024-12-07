@@ -3,6 +3,9 @@
 
 // Title page
 
+#let courseCode = "COMP500"
+#let courseTitle = "Programming Concepts and Techniques"
+
 #line()
   #text(size: 24pt, [
   #courseCode - #courseTitle
