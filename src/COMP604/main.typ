@@ -18,6 +18,7 @@
 ])
 
 Written by #authorname
+Last updated: #datetime.today().display()
 
 #pagebreak()
 
@@ -44,4 +45,4 @@ This is an excellent resource, and I highly recommend using this.
 #include("chapters/chapter_1.typ")
 #include("chapters/chapter_2.typ")
 #include("chapters/chapter_3.typ")
-#include("chapters/chapter_4.typ")
+// #include("chapters/chapter_4.typ")
