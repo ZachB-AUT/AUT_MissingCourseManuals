@@ -20,12 +20,36 @@ Making your own header file is extremely simple - just create a new file ending
 with .h and put your function declarations in there. These declarations are all
 that is needed for C to know that these functions exist.
 
-This is the reason that we include stdio.h at the top of our programs, it tells
+This is the reason that we include stdio.h at the top of programs, it tells
 C what functions are available in the standard input/output library (such as
 printf).
 
 Generally each C source file should have an associated header file with the same
 name, just with .h instead of .c.
+
+Additionally, a distinction must be made between local headers and system headers.
+local headers are specified by using their path between quotes
+("myheader.h"), and system headers are specified with angle brackets (<stdio.h>).
+
+Here is an example:
+```c
+// In myprogram.c
+#include <stdio.h>      // System header
+#include "myheader.h"   // Local header
+```
+
+The difference between the two styles is that when the compiler searches for a
+header file, it looks in different places depending on which style is used.
+
+When using angle brackets (<>), the compiler looks in standard system
+directories first (like /usr/include).
+
+When using quotes (""), the compiler first looks in the current directory, then
+in the specified include paths, and finally in the system directories.
+
+This is why we use quotes for our own header files (which are usually in the
+same directory as our source files) and angle brackets for system headers
+(which are installed in system locations).
 
 === XV6 Headers
 
@@ -89,7 +113,7 @@ Null pointers (pointers that don't point to anything) are declared as:
 int* ptr = NULL;
 ```
 
-Always check if a pointer is NULL before dereferencing it to avoid segmentation
+*Always* check if a pointer is NULL before dereferencing it to avoid segmentation
 faults.
 
 Common pointer mistakes to avoid:
@@ -109,3 +133,58 @@ int* ptr = arr;      // ptr points to first element
 printf("%d", ptr[2]); // Prints 3
 printf("%d", *(ptr + 2)); // Also prints 3
 ```
+
+== Memory management
+In C, dynamic memory allocation allows you to allocate memory at runtime rather than compile time.
+This is done using functions from the stdlib.h library:
+
+```c
+// Allocate memory for one integer
+int* ptr = (int*)malloc(sizeof(int));
+
+// Allocate memory for an array of 10 integers
+int* arr = (int*)malloc(10 * sizeof(int));
+
+// Always check if allocation succeeded
+if (ptr == NULL || arr == NULL) {
+    // Handle allocation failure
+    return -1;
+}
+
+// Use the memory
+*ptr = 42;
+arr[0] = 1;
+
+// Free the memory when done
+free(ptr);
+free(arr);
+```
+
+The malloc() function returns a void pointer that must be cast to the appropriate type.
+malloc() allocates the specified number of bytes and returns a pointer to the first byte.
+
+There are other memory allocation functions:
+- calloc(): Allocates and zeros memory
+- realloc(): Resizes previously allocated memory
+- free(): Releases allocated memory
+
+Memory that is dynamically allocated exists on the heap rather than the stack.
+Stack memory is automatically managed and freed when variables go out of scope,
+while heap memory must be manually freed using free().
+
+Failing to free allocated memory results in memory leaks - memory that remains
+allocated but can no longer be accessed by the program. This is especially
+problematic in long-running programs like operating systems.
+
+A few important rules for dynamic memory:
+- Always check if malloc() returns NULL
+- Only free memory once
+- Only free memory allocated with malloc/calloc/realloc
+- Keep track of all allocated memory
+- Set pointers to NULL after freeing them
+
+=== Dynamic memory management in xv6
+
+Memory management in xv6 is almost identical to normal C, except memory
+allocation is dont using the `malloc()` system call instead of the stdlib
+function.

@@ -43,9 +43,11 @@ spending it on assignment two.
 
 == Software tools
 
-The later portion of this course makes use of the XV6 operating system. Because
-XV6 runs on a different architecture than most computers, it can only be run
-using a virtual machine. Thankfully, a free and easy-to-use virtual machine
+The later portion of this course makes use of the XV6 operating system, which is
+a simple "toy" operating system which is easy to modify.
+
+Because XV6 runs on a different architecture than most computers, it can only be
+run using a virtual machine. Thankfully, a free and easy-to-use virtual machine
 exists called QEMU. The next sections will show you how to install this software
 stack.
 
@@ -105,6 +107,11 @@ This information is a combination of the "Software setup" section on Canvas and 
   # setup saying the computer can't find the compiler toolchain or something,
   # replace the line you added with this one:
   export PATH=$PATH:/opt/homebrew/Cellar/riscv-gnu-toolchain/main.reinstall/bin
+  ```
+
++ Once that is done, tell zsh to use the new configuration file:
+  ```sh
+  source ~/.zshrc
   ```
 
 + Finally, install QEMU.
