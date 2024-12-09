@@ -90,3 +90,25 @@ I once heard that you should make backups at least as often as it would take you
 to redo your work. This advice has saved me days of time.
 
 === Documentation
+
+While it can take time and effort, it is best to keep a log of every change you
+make to xv6.
+
+Some things to document:
++ What files you modified
++ What changes you made to each file
++ Why you made those changes
++ Any issues you encountered
++ How you fixed those issues
++ What testing you performed
+
+By doing this, you make it much easier to:
++ Remember how you did something
++ Fix issues that come up later
++ Explain your changes to others
++ Prove that you did the work
++ Learn from your mistakes
++ Build on your previous work
+
+Even if you think you'll remember how you did something, you probably won't.
+Documentation is a gift to your future self.
