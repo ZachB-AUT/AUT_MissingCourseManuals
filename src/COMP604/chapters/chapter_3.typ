@@ -1,11 +1,13 @@
 #import "../template.typ": *
 
+#pagebreak()
 = Command Line Utilities
 #line()
 
 == Basic utilities
 
 These are simple utilities with short descriptions.
+
 
 === cd
 
@@ -66,6 +68,8 @@ You can also create multiple nested directories at once using the `-p` flag:
 ```sh
 mkdir -p path/to/new/directory
 ```
+
+#pagebreak()
 
 === chmod
 Short for 'change mode', changes the permissions of a file or directory.
@@ -153,7 +157,7 @@ tar -xzvf myarchive.tar.gz
 tar -czvf myname-12345678-assX.tar.gz xv6-riscv/
 ```
 
-#pagebreak()
+// #pagebreak()
 
 == grep
 
@@ -185,6 +189,8 @@ which stands for "quit all, force".
 Either of these is worth knowing how to use, as they are preinstalled on
 essentially all Linux installs. You can use either of these text editors to edit
 files inside the Ubuntu virtual machine without the use of an external text editor.
+
+#pagebreak()
 
 == Pipes and redirection
 

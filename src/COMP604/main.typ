@@ -47,6 +47,7 @@ This is an excellent resource, and I highly recommend using this.
 #include("chapters/chapter_2.typ") // C programming in xv6
 #include("chapters/chapter_3.typ") // Command line overview
 #include("chapters/chapter_4.typ") // xv6 overview
+#include("chapters/chapter_5.typ") // Misc
 
 // Future directions:
 // Add Actual Course Content

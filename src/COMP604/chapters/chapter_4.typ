@@ -1,5 +1,6 @@
 #import "../template.typ": *
 
+#pagebreak()
 = XV6 for Dummies
 #line()
 
@@ -83,8 +84,7 @@ The following steps need to be performed to add a new system call:
 +  In `kernel/sysproc.c`, implement the system call.
 			```c
 			uint64
-			sys_examplesyscall(void)
-			{
+			sys_examplesyscall(void) {
 					// Implementation goes here
 					return 0;
 			}
@@ -215,6 +215,16 @@ rm -rf ./.git
 ```
 from inside the `xv6-riscv` directory.
 
+=== Using xv6
+
+The xv6 shell behaves very similarly to a typical shell session.
+To run a user program, simply type its name and press enter.
+
+You can list all of the running programs by pressing `ctrl-P`
+
+To exit xv6, press `ctrl-a`, release those two keys and then press `x`.
+
+// #pagebreak()
 
 === Preparing an xv6 instance for submission
 

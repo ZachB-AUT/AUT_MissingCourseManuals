@@ -1,5 +1,6 @@
 #import "../template.typ": *
 
+#pagebreak()
 = What you need to know about C programming
 #line()
 
@@ -51,6 +52,8 @@ This is why we use quotes for our own header files (which are usually in the
 same directory as our source files) and angle brackets for system headers
 (which are installed in system locations).
 
+#pagebreak()
+
 === XV6 Headers
 
 XV6 has several header files, each containing functions related to a specific purpose:
@@ -88,7 +91,7 @@ To access the value that a pointer points to (dereferencing), use the asterisk (
 int value = *ptr;  // value is now 5
 ```
 
-#pagebreak()
+// #pagebreak()
 
 Structures can also be accessed through pointers. Here's how:
 ```c
@@ -115,6 +118,8 @@ int* ptr = NULL;
 
 *Always* check if a pointer is NULL before dereferencing it to avoid segmentation
 faults.
+
+#pagebreak()
 
 Common pointer mistakes to avoid:
 - Dereferencing NULL pointers
@@ -175,6 +180,8 @@ while heap memory must be manually freed using free().
 Failing to free allocated memory results in memory leaks - memory that remains
 allocated but can no longer be accessed by the program. This is especially
 problematic in long-running programs like operating systems.
+
+#pagebreak()
 
 A few important rules for dynamic memory:
 - Always check if malloc() returns NULL

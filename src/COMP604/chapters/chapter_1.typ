@@ -120,6 +120,7 @@ This information is a combination of the "Software setup" section on Canvas and 
   ```
   If you have issues with this step ensure that the path was set correctly.
 
+#pagebreak()
 === Ubuntu setup
 
 Getting this running is very easy on Ubuntu.
