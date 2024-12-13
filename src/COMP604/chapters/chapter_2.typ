@@ -140,8 +140,9 @@ printf("%d", *(ptr + 2)); // Also prints 3
 ```
 
 == Memory management
-In C, dynamic memory allocation allows you to allocate memory at runtime rather than compile time.
-This is done using functions from the stdlib.h library:
+
+In C, dynamic memory allocation allows you to allocate memory at runtime rather
+than compile time. This is done using functions from the stdlib.h library:
 
 ```c
 // Allocate memory for one integer
@@ -165,8 +166,9 @@ free(ptr);
 free(arr);
 ```
 
-The malloc() function returns a void pointer that must be cast to the appropriate type.
-malloc() allocates the specified number of bytes and returns a pointer to the first byte.
+The malloc() function returns a void pointer that must be cast to the
+appropriate type. malloc() allocates the specified number of bytes and returns a
+pointer to the first byte.
 
 There are other memory allocation functions:
 - calloc(): Allocates and zeros memory

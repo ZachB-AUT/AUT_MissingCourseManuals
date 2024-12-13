@@ -11,7 +11,8 @@ These are simple utilities with short descriptions.
 
 === cd
 
-Short for 'change directory', this utility allows you to move between directories.
+Short for 'change directory', this utility allows you to move between
+directories.
 
 Example usage:
 ```sh
@@ -20,8 +21,8 @@ cd newDirectory/
 
 === ls
 
-Short for 'list', lists the files in a directory.
-Use the command line flag `-a` (short for 'all'), to show hidden files and directories.
+Short for 'list', lists the files in a directory. Use the command line flag `-a`
+(short for 'all'), to show hidden files and directories.
 
 ```sh
 ls
@@ -41,7 +42,8 @@ man ls
 
 === cat
 
-Short for 'concatenate', was designed to be used for combining two text files, but it allows us to print the contents of a file to the terminal.
+Short for 'concatenate', was designed to be used for combining two text files,
+but it allows us to print the contents of a file to the terminal.
 
 Example usage:
 ```sh
@@ -49,6 +51,7 @@ cat file.txt
 ```
 
 === pwd
+
 Short for 'print working directory', displays the current directory you are in.
 
 Example usage:
@@ -57,6 +60,7 @@ pwd
 ```
 
 === mkdir
+
 Short for 'make directory', creates a new directory.
 
 Example usage:
@@ -65,6 +69,7 @@ mkdir newDirectory
 ```
 
 You can also create multiple nested directories at once using the `-p` flag:
+
 ```sh
 mkdir -p path/to/new/directory
 ```
@@ -94,14 +99,15 @@ So 755 means:
 - Group can read (4) and execute (1): 4+0+1 = 5
 - Others can read (4) and execute (1): 4+0+1 = 5
 
-you can also quickly make a file executable by running:
+You can also quickly make a file executable by running:
 ```sh
 chmod +x file.sh
 ```
 
 === mv
-Short for 'move', moves files or directories from one location to another.
-It can also be used to rename files.
+
+Short for 'move', moves files or directories from one location to another. It
+can also be used to rename files.
 
 Example usage:
 ```sh
@@ -123,6 +129,7 @@ flag to make mv prompt before overwriting.
 
 
 === cp
+
 Short for 'copy', copies files or directories from one location to another.
 
 Example usage:
@@ -142,8 +149,9 @@ Unlike mv, cp creates a duplicate of the file, leaving the original intact.
 
 == tar
 
-This command creates an archive from either a list of files or a directory.
-You will be using this to turn your `xv6-riscv` directory into a file ready for submission.
+This command creates an archive from either a list of files or a directory. You
+will be using this to turn your `xv6-riscv` directory into a file ready for
+submission.
 
 This is a remarkably complicated command to use, but here are some example usages:
 ```sh
@@ -161,7 +169,8 @@ tar -czvf myname-12345678-assX.tar.gz xv6-riscv/
 
 == grep
 
-Grep allows you to search for strings of text (or more generally, regexes) in either a file or a stream.
+Grep allows you to search for strings of text (or more generally, regexes) in
+either a file or a stream.
 
 Example usage:
 ```sh
@@ -188,7 +197,8 @@ which stands for "quit all, force".
 
 Either of these is worth knowing how to use, as they are preinstalled on
 essentially all Linux installs. You can use either of these text editors to edit
-files inside the Ubuntu virtual machine without the use of an external text editor.
+files inside the Ubuntu virtual machine without the use of an external text
+editor.
 
 #pagebreak()
 

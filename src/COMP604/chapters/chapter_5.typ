@@ -7,8 +7,8 @@
 
 === Makefiles
 
-As mentioned earlier, makefiles can be used to automate repetitive tasks for this class.
-This is the makefile I used for assignment 3
+As mentioned earlier, makefiles can be used to automate repetitive tasks for
+this class. This is the makefile I used for assignment 3
 
 ```make
 OUTDIR = "FinalSubmission"
@@ -83,8 +83,8 @@ git remote add origin https://github.com/username/repository.git
 git push
 ```
 
-You should use a remote service like github to back up your code, this makes it *much* easier to recover from some disaster
-or work across multiple computers.
+You should use a remote service like github to back up your code, this makes it
+*much* easier to recover from some disaster or work across multiple computers.
 
 I once heard that you should make backups at least as often as it would take you
 to redo your work. This advice has saved me days of time.

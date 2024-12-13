@@ -37,7 +37,10 @@ a way of writting down everything I know for my own benefit, my hope is that it
 will be of use for you as well.
 
 == Additional resources
-This class recommends the use of the OSTEP (Operating Systems, Three Easy Pieces) textbook. It can be found here: #link("https://pages.cs.wisc.edu/~remzi/OSTEP/", [OSTEP])
+
+This class recommends the use of the OSTEP (Operating Systems, Three Easy
+Pieces) textbook. It can be found here: #link("https://pages.cs.wisc.edu/~remzi/OSTEP/", [OSTEP])
+
 This is an excellent resource, and I highly recommend using this.
 
 #pagebreak()
