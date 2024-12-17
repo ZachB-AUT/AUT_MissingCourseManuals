@@ -233,9 +233,9 @@ command > output.txt 2>&1
 
 == Useful utilities you might want to install
 
-=== tealdear
+=== tealdeer
 
-Tealdear is an implementation of the `tldr` command available on most platforms.
+Tealdeer is an implementation of the `tldr` command available on most platforms.
 It is very similar to the man command, but with a simplified output similar to
 your average "How to use X" cheatsheet.
 

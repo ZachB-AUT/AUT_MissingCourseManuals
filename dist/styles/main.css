@@ -61,3 +61,9 @@ header {
 .pdf-download:hover {
     background: #0056b3;
 }
+
+header {
+    width: 100%;
+    text-align: center;
+    background-color: #f0f0f0;
+}
